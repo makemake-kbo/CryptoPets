@@ -455,9 +455,18 @@ var contract = new web3.eth.Contract([
 ], '0x62bCc84bEA2c0aD32A5F1aC6842D636B3F2CAE9d');
 
 function getContractName() {
-	p1 = document.getElementById("p1");
+	p2 = document.getElementById("p2");
 	var contractName = document.createElement('p');
 	
 	contract.methods.name().call((err, result) => { contractName.innerHTML = result });
-	p1.appendChild(contractName);
+	p2.appendChild(contractName);
+}
+
+function getTokenBalance() {
+	let balanceBoxValue = document.getElementById("contractBalanceInput").value;
+	p1 = document.getElementById("p1");
+	var addressBalance = document.createElement('p');
+	
+	contract.methods.balanceOf(balanceBoxValue).call((err, result) => { console.log(result) });
+	
 }
