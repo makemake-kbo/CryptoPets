@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 body {
    background-color:rgb(52, 61, 70);
    padding: 2em;
@@ -20,6 +21,11 @@ button {
 }
 h1 {
 	color: rgb(248,248,255);
+}
+
+.text {
+    color: rgb(248,248,255);
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
