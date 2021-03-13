@@ -14,11 +14,14 @@
 	<div class=”container”>
 		<h1 class="text">Crypto Pets</h1>
 		<h2 id=”instructor” class="text">Insert contract address and wallet address</h2>
-		<input type="text" placeholder="Insert contract address here..." id="contractBalanceInput"><br>
-		<input type="text" placeholder="Insert wallet address here..." id="contractAddressInput"><br>
-		<button id=”name-button” onclick="getTokenBalance()">Get balance</button>
+		<input type="text" placeholder="Insert contract address here..." id="contractAddressInput"><br>
+		<input type="text" placeholder="Insert wallet address here..." id="contractBalanceInput"><br>
+		<button id=”name-button” onclick="initializeContract(); readButton()">Get Info</button>
 		
 		<p id="p1" class="text"> </p><br>
 	<script src="./script/web3.js"></script>
+	<script src="./script/input.js"></script>
+	<script src="./script/readFunctions.js"></script>
+
 </body>
 </html>
