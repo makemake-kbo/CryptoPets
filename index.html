@@ -31,42 +31,65 @@
 				</ul>
 
 				<form class="d-flex">
-					<button class="btn btn-outline-success" type="submit">Connect wallet</button>
-				</form>
-			</div>
-		</div>
-	</nav>
-	<hr class="bg-light">
-	<div class=”container”>
+					<div class="prepare">
+						<button class="btn btn-outline-success" type="submit" id="btn-connect">
+							Connect wallet
+						</button>
+					</div>
+					<div id="connected" style="display: none">
 
-		<div class="container">
-			<div class="row">
-				<div class="col border rounded">
-					<h1 class="text">Crypto Pets</h1>
-					<h2 id=”instructor” class="text">Insert contract address and wallet address</h2>
-					<form>
-						<div class="mb-3">
-							<label for="contractAddressInput" class="form-label text">Contract address:</label>
-							<input type="text" placeholder="Insert contract address here..." id="contractAddressInput">
+						<button class="btn btn-outline-danger" id="btn-disconnect">
+							Disconnect wallet
+						</button>
+						<div id="network">
+							<p>
+								<strong>Connected blockchain:</strong> <span id="network-name"></span>
+							</p>
+
+							<p>
+								<strong>Selected account:</strong> <span id="selected-account"></span>
+							</p>
 						</div>
-						<div class="mb-3">
-							<label for="exampleInputPassword1" class="form-label text">Wallet address:</label>
-							<input type="text" placeholder="Insert wallet address here..." id="contractBalanceInput">
-						</div>
-						<button type="submit" onclick="initializeContract(); readButton()" class="btn btn-primary" id=”name-button”>Submit</button>
 					</form>
 				</div>
-				<div class="col border rounded col-xs-1" align="center">
-					<h1 class="text">Greatest showtime</h1>
+			</div>
+
+		</nav>
+		<hr class="bg-light">
+		<div class=”container”>
+
+			<div class="container">
+				<div class="row">
+					<div class="col border rounded">
+						<h1 class="text">Crypto Pets</h1>
+						<h2 id=”instructor” class="text">Insert contract address and wallet address</h2>
+						<form>
+							<div class="mb-3">
+								<label for="contractAddressInput" class="form-label text">Contract address:</label>
+								<input type="text" placeholder="Insert contract address here..." id="contractAddressInput">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label text">Wallet address:</label>
+								<input type="text" placeholder="Insert wallet address here..." id="contractBalanceInput">
+							</div>
+							<button type="submit" onclick="initializeContract(); readButton()" class="btn btn-primary" id=”name-button”>Submit</button>
+						</form>
+					</div>
+					<div class="col border rounded col-xs-1" align="center">
+						<h1 class="text">Greatest showtime</h1>
+					</div>
 				</div>
 			</div>
 		</div>
 
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-	<script src="./script/web3.js"></script>
-	<script src="./script/input.js"></script>
-	<script src="./script/readFunctions.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+		<script src="./script/web3.js"></script>
+		<script src="./script/input.js"></script>
+		<script src="./script/readFunctions.js"></script>
+		<script src="./script/web3modal.js"></script>
 
-</body>
-</html>
+	</body>
+
+	</html>
