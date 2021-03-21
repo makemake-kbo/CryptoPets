@@ -21,6 +21,7 @@ function getTokenBalance() {
 }
 
 function readButton() {
+	p1.innerHTML = "";
 	getContractName();
 	getContractOwner();
 	getTokenBalance();
