@@ -451,14 +451,26 @@ function initializeContract() {
 		"type": "function"
 	}
 	], '0x62bCc84bEA2c0aD32A5F1aC6842D636B3F2CAE9d'); //0x62bCc84bEA2c0aD32A5F1aC6842D636B3F2CAE9d
-	contract.methods.name().call((err, result) => { console.log('Contract loaded: ' + result) });
+contract.methods.name().call((err, result) => { console.log('Contract loaded: ' + result) });
 }
 
 const ethEnabled = () => {
-  if (window.ethereum) {
-    window.web3 = new Web3(window.ethereum);
-    window.ethereum.enable();
-    return true;
-  }
-  return false;
+	if (window.ethereum) {
+		window.web3 = new Web3(window.ethereum);
+		window.ethereum.enable();
+		switchButtonToWalletState();
+		return true;
+	}
+	return false;
 }
+
+function switchButtonToWalletState() {
+	if (ethereum.isConnected()) {
+		document.getElementById('btn-connect').style = 'display: none';
+		document.getElementById('connected').style = 'display: block';
+	} else {
+		document.getElementById('btn-connect').style = 'display: block';
+		document.getElementById('connected').style = 'display: none';
+	}
+}
+
