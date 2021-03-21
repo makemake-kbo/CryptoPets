@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: 3BSD
-pragma solidity 0.7.6;
+pragma solidity 0.8.1;
 
-import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
-import "openzeppelin-solidity/contracts/access/Ownable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
 
 contract CryptoPets is ERC721, Ownable {
     
@@ -15,8 +15,8 @@ contract CryptoPets is ERC721, Ownable {
     // Base URI
     string private _baseURIextended;
     
-    // Curre token ID for minting
-    uint16 public currentTokenID = 0;
+    // Current token ID for minting new tokens
+    uint16 private currentTokenID = 0;
 
     constructor(string memory _name, string memory _symbol)
         ERC721(_name, _symbol)
@@ -26,7 +26,7 @@ contract CryptoPets is ERC721, Ownable {
         _baseURIextended = baseURI_;
     }
     
-    function _setTokenURI(uint256 tokenId, string memory _tokenURI) internal override virtual {
+    function _setTokenURI(uint256 tokenId, string memory _tokenURI) internal virtual {
         require(_exists(tokenId), "ERC721Metadata: URI set of nonexistent token");
         _tokenURIs[tokenId] = _tokenURI;
     }
@@ -36,7 +36,7 @@ contract CryptoPets is ERC721, Ownable {
         _tokenPetName[tokenId] = _petName;
     }
 
-    function _baseURI() internal view virtual returns (string memory) {
+    function _baseURI() internal view virtual override returns (string memory) {
         return _baseURIextended;
     }
     
@@ -63,10 +63,9 @@ contract CryptoPets is ERC721, Ownable {
         string memory tokenURI_,
         string memory _petName
     ) external onlyOwner() {
-        require(!(_exists(127)), "ERC721: Token Limit reached!");
         _mint(_to, currentTokenID);
         _setTokenURI(currentTokenID, tokenURI_);
         _setPetName(currentTokenID, _petName);
-        currentTokenID++;
+        unchecked{currentTokenID++;}
     }
 }
