@@ -22,7 +22,12 @@ function getTokenBalance() {
 
 function readButton() {
 	p1.innerHTML = "";
-	getContractName();
-	getContractOwner();
-	getTokenBalance();
+	try {
+		getContractName();
+		getContractOwner();
+		getTokenBalance();
+	} catch (error) {
+		p1.innerHTML = "";
+		console.error(error);
+	}
 }
