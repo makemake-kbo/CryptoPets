@@ -62,7 +62,7 @@ contract CryptoPets is ERC721, Ownable {
         address _to,
         string memory tokenURI_,
         string memory _petName
-    ) external onlyOwner() {
+    ) external {
         _mint(_to, currentTokenID);
         _setTokenURI(currentTokenID, tokenURI_);
         _setPetName(currentTokenID, _petName);
