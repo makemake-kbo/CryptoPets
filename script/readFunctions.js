@@ -20,14 +20,27 @@ function getTokenBalance() {
 	p1.appendChild(addressBalance);
 }
 
+function getTokenName(tokenId) {
+	cardName = document.getElementById("cardName");
+	cardId = document.getElementById("cardId");
+	cardId.innerHTML = tokenId;
+	contract.methods.viewPetName(tokenId).call((err, result) => { cardName.innerHTML = result });
+}
+
+function fetchTokenUri(tokenId) {
+	let tokenUri;
+	contract.methods.tokenURI(tokenId).call((err, result) => { tokenUri = result });
+	return tokenUri;
+}
+
 function readButton() {
-	p1.innerHTML = "";
-	try {
-		getContractName();
-		getContractOwner();
-		getTokenBalance();
-	} catch (error) {
-		p1.innerHTML = "";
-		console.error(error);
+	getTokenName(document.getElementById("tokenIdInput").value);
+
+	if ((document.getElementById("contractBalanceInput").value) === null || (document.getElementById("tokenIdInput").value) === null) {
+		document.getElementById("cardInfo").style = 'display: none';
+	} else {
+		document.getElementById("cardInfo").style = 'display: block';
+		console.log('successfully displayed card')
 	}
+	return true;
 }
