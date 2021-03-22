@@ -436,8 +436,27 @@ function initializeContract() {
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [
+		{
+			"internalType": "uint256",
+			"name": "tokenId",
+			"type": "uint256"
+		}
+		],
+		"name": "viewPetName",
+		"outputs": [
+		{
+			"internalType": "string",
+			"name": "",
+			"type": "string"
+		}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
-], '0xeDDa603E9Cb16fD960CFD8890c866faD306C0299'); //0x3BF22716eaC27e6b77ed7B3Eae75E63BA739063b
+], '0x1b7e35ee9fAF386A0ae40685c8a2EC3f51ddFb32'); //0x1b7e35ee9fAF386A0ae40685c8a2EC3f51ddFb32
 contract.methods.name().call((err, result) => { console.log('Contract loaded: ' + result) });
 }
 

@@ -57,6 +57,11 @@ contract CryptoPets is ERC721, Ownable {
         // If there is a baseURI but no tokenURI, concatenate the tokenID to the baseURI.
         return string(abi.encodePacked(base, tokenId.toString()));
     }
+    
+    function viewPetName(uint256 tokenId) public view returns(string memory) {
+        string memory petName = _tokenPetName[tokenId];
+        return petName;
+    }
 
     function mint(
         address _to,
