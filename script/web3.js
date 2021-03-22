@@ -70,50 +70,6 @@ function initializeContract() {
 		"type": "event"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-		{
-			"indexed": true,
-			"internalType": "address",
-			"name": "previousOwner",
-			"type": "address"
-		},
-		{
-			"indexed": true,
-			"internalType": "address",
-			"name": "newOwner",
-			"type": "address"
-		}
-		],
-		"name": "OwnershipTransferred",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-		{
-			"indexed": true,
-			"internalType": "address",
-			"name": "from",
-			"type": "address"
-		},
-		{
-			"indexed": true,
-			"internalType": "address",
-			"name": "to",
-			"type": "address"
-		},
-		{
-			"indexed": true,
-			"internalType": "uint256",
-			"name": "tokenId",
-			"type": "uint256"
-		}
-		],
-		"name": "Transfer",
-		"type": "event"
-	},
-	{
 		"inputs": [
 		{
 			"internalType": "address",
@@ -129,81 +85,6 @@ function initializeContract() {
 		"name": "approve",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-		{
-			"internalType": "address",
-			"name": "owner",
-			"type": "address"
-		}
-		],
-		"name": "balanceOf",
-		"outputs": [
-		{
-			"internalType": "uint256",
-			"name": "",
-			"type": "uint256"
-		}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "currentTokenID",
-		"outputs": [
-		{
-			"internalType": "uint16",
-			"name": "",
-			"type": "uint16"
-		}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-		{
-			"internalType": "uint256",
-			"name": "tokenId",
-			"type": "uint256"
-		}
-		],
-		"name": "getApproved",
-		"outputs": [
-		{
-			"internalType": "address",
-			"name": "",
-			"type": "address"
-		}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-		{
-			"internalType": "address",
-			"name": "owner",
-			"type": "address"
-		},
-		{
-			"internalType": "address",
-			"name": "operator",
-			"type": "address"
-		}
-		],
-		"name": "isApprovedForAll",
-		"outputs": [
-		{
-			"internalType": "bool",
-			"name": "",
-			"type": "bool"
-		}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -230,49 +111,23 @@ function initializeContract() {
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-		{
-			"internalType": "string",
-			"name": "",
-			"type": "string"
-		}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-		{
-			"internalType": "address",
-			"name": "",
-			"type": "address"
-		}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
+		"anonymous": false,
 		"inputs": [
 		{
-			"internalType": "uint256",
-			"name": "tokenId",
-			"type": "uint256"
-		}
-		],
-		"name": "ownerOf",
-		"outputs": [
-		{
+			"indexed": true,
 			"internalType": "address",
-			"name": "",
+			"name": "previousOwner",
+			"type": "address"
+		},
+		{
+			"indexed": true,
+			"internalType": "address",
+			"name": "newOwner",
 			"type": "address"
 		}
 		],
-		"stateMutability": "view",
-		"type": "function"
+		"name": "OwnershipTransferred",
+		"type": "event"
 	},
 	{
 		"inputs": [],
@@ -364,6 +219,174 @@ function initializeContract() {
 		"type": "function"
 	},
 	{
+		"anonymous": false,
+		"inputs": [
+		{
+			"indexed": true,
+			"internalType": "address",
+			"name": "from",
+			"type": "address"
+		},
+		{
+			"indexed": true,
+			"internalType": "address",
+			"name": "to",
+			"type": "address"
+		},
+		{
+			"indexed": true,
+			"internalType": "uint256",
+			"name": "tokenId",
+			"type": "uint256"
+		}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+		{
+			"internalType": "address",
+			"name": "from",
+			"type": "address"
+		},
+		{
+			"internalType": "address",
+			"name": "to",
+			"type": "address"
+		},
+		{
+			"internalType": "uint256",
+			"name": "tokenId",
+			"type": "uint256"
+		}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+		{
+			"internalType": "address",
+			"name": "newOwner",
+			"type": "address"
+		}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+		{
+			"internalType": "address",
+			"name": "owner",
+			"type": "address"
+		}
+		],
+		"name": "balanceOf",
+		"outputs": [
+		{
+			"internalType": "uint256",
+			"name": "",
+			"type": "uint256"
+		}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+		{
+			"internalType": "uint256",
+			"name": "tokenId",
+			"type": "uint256"
+		}
+		],
+		"name": "getApproved",
+		"outputs": [
+		{
+			"internalType": "address",
+			"name": "",
+			"type": "address"
+		}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+		{
+			"internalType": "address",
+			"name": "owner",
+			"type": "address"
+		},
+		{
+			"internalType": "address",
+			"name": "operator",
+			"type": "address"
+		}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+		{
+			"internalType": "bool",
+			"name": "",
+			"type": "bool"
+		}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+		{
+			"internalType": "string",
+			"name": "",
+			"type": "string"
+		}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+		{
+			"internalType": "address",
+			"name": "",
+			"type": "address"
+		}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+		{
+			"internalType": "uint256",
+			"name": "tokenId",
+			"type": "uint256"
+		}
+		],
+		"name": "ownerOf",
+		"outputs": [
+		{
+			"internalType": "address",
+			"name": "",
+			"type": "address"
+		}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 		{
 			"internalType": "bytes4",
@@ -413,44 +436,8 @@ function initializeContract() {
 		],
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"inputs": [
-		{
-			"internalType": "address",
-			"name": "from",
-			"type": "address"
-		},
-		{
-			"internalType": "address",
-			"name": "to",
-			"type": "address"
-		},
-		{
-			"internalType": "uint256",
-			"name": "tokenId",
-			"type": "uint256"
-		}
-		],
-		"name": "transferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-		{
-			"internalType": "address",
-			"name": "newOwner",
-			"type": "address"
-		}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	}
-	], '0x62bCc84bEA2c0aD32A5F1aC6842D636B3F2CAE9d'); //0x62bCc84bEA2c0aD32A5F1aC6842D636B3F2CAE9d
+], '0xeDDa603E9Cb16fD960CFD8890c866faD306C0299'); //0x3BF22716eaC27e6b77ed7B3Eae75E63BA739063b
 contract.methods.name().call((err, result) => { console.log('Contract loaded: ' + result) });
 }
 
