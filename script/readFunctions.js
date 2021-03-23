@@ -27,14 +27,22 @@ function getTokenName(tokenId) {
 	contract.methods.viewPetName(tokenId).call((err, result) => { cardName.innerHTML = result });
 }
 
-function fetchTokenUri(tokenId) {
-	let tokenUri;
-	contract.methods.tokenURI(tokenId).call((err, result) => { tokenUri = result });
-	return tokenUri;
+var result;
+async function fetchTokenUri(tokenId) {
+		contract.methods.tokenURI(tokenId).call((err, ipfsResult) => { 
+		console.log(ipfsResult);
+		result = ipfsResult;
+	 });
+}
+
+async function processTokenUri(result) {
+	result = result.replace('ipfs:/', 'https://ipfs.io');
+	return result;
 }
 
 function readButton() {
 	getTokenName(document.getElementById("tokenIdInput").value);
+	fetchTokenUri("tokenIdInput");
 
 	if ((document.getElementById("contractBalanceInput").value) === null || (document.getElementById("tokenIdInput").value) === null) {
 		document.getElementById("cardInfo").style = 'display: none';
