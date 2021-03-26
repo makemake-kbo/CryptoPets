@@ -29,20 +29,29 @@ function getTokenName(tokenId) {
 
 var result;
 async function fetchTokenUri(tokenId) {
-		contract.methods.tokenURI(tokenId).call((err, ipfsResult) => { 
+	let foo;
+	await contract.methods.tokenURI(tokenId).call((err, ipfsResult) => { 
 		console.log(ipfsResult);
-		result = ipfsResult;
+		foo = ipfsResult;
 	 });
+	result = foo;
 }
 
 async function processTokenUri(result) {
-	result = result.replace('ipfs:/', 'https://ipfs.io');
+	result = await result.replace('ipfs:/', 'https://ipfs.io');
+	console.log(result);
 	return result;
 }
 
-function readButton() {
+async function readButton() {
 	getTokenName(document.getElementById("tokenIdInput").value);
-	fetchTokenUri("tokenIdInput");
+	await fetchTokenUri(document.getElementById("tokenIdInput").value);
+	document.getElementById("petImg").src = processTokenUri(result);
+
+	document.getElementById("petImg").style = "display: block";
+	document.getElementById("petImgPlaceholder").style = "display: none";
+
+
 
 	if ((document.getElementById("contractBalanceInput").value) === null || (document.getElementById("tokenIdInput").value) === null) {
 		document.getElementById("cardInfo").style = 'display: none';
