@@ -44,12 +44,15 @@ function processTokenUri(result) {
 }
 
 async function readButton() {
-	getTokenName(document.getElementById("tokenIdInput").value);
-	await fetchTokenUri(document.getElementById("tokenIdInput").value);
-	document.getElementById("petImg").src = processTokenUri(result).toString();
-
-	document.getElementById("petImg").style = "display: block";
-	document.getElementById("petImgPlaceholder").style = "display: none";
+	try {
+		getTokenName(document.getElementById("tokenIdInput").value);
+		await fetchTokenUri(document.getElementById("tokenIdInput").value);
+		document.getElementById("petImg").src = processTokenUri(result).toString();
+		document.getElementById("petImg").style = "display: block";
+		document.getElementById("petImgPlaceholder").style = "display: none";
+	} catch (e) {
+		console.warn('There has been an error!\n' + e);
+	}
 
 
 
