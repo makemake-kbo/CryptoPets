@@ -1,3 +1,6 @@
+document.getElementById("petImg").style = "display: none";
+
+
 ethereum.on('accountsChanged', function (accounts) {
 	document.getElementById('contractBalanceInput').value = ethereum.selectedAddress;
 	document.getElementById('btn-disconnect').innerHTML = ethereum.selectedAddress;

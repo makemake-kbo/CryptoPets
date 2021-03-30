@@ -33,7 +33,7 @@ async function fetchTokenUri(tokenId) {
 	await contract.methods.tokenURI(tokenId).call((err, ipfsResult) => { 
 		console.log(ipfsResult);
 		foo = ipfsResult;
-	 });
+	});
 	result = foo;
 }
 
