@@ -6,20 +6,6 @@ function getContractName() {
 	p1.appendChild(contractName);
 }
 
-function getContractOwner() {
-	var contractOwner = document.createElement('p');
-	
-	contract.methods.owner().call((err, result) => { contractOwner.innerHTML = result });
-	p1.appendChild(contractOwner);
-}
-
-function getTokenBalance() {
-	var addressBalance = document.createElement('p');
-	
-	contract.methods.balanceOf(document.getElementById("contractBalanceInput").value).call((err, result) => { addressBalance.innerHTML = result });
-	p1.appendChild(addressBalance);
-}
-
 function getTokenName(tokenId) {
 	cardName = document.getElementById("cardName");
 	cardId = document.getElementById("cardId");
@@ -53,7 +39,6 @@ async function readButton() {
 	} catch (e) {
 		console.warn('There has been an error!\n' + e);
 	}
-
 
 
 	if ((document.getElementById("contractBalanceInput").value) === null || (document.getElementById("tokenIdInput").value) === null) {
