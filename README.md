@@ -5,7 +5,7 @@
 
 Crypto Pets is an ERC-721 token that enables anyone to tokenize their pet pictures!   
 Crypto Pets is currently available on the xDai chain where minting costs less than $0.0002.   
-If you never used xDai before, head over to the [xDai Faucet](https://blockscout.com/xdai/mainnet/faucet), to get some free xDai. Enough to mint thousands of Crypto Pets. Remember to set your wallet RPC to the xDai chain! [Heres a guide on how to do it.](https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup).
+If you never used xDai before, head over to the [xDai Faucet](https://blockscout.com/xdai/mainnet/faucet), to get some free xDai. Enough to mint thousands of Crypto Pets. Remember to set your wallet RPC to the xDai chain! [Heres a guide on how to do it](https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup).
 
 ## View token info
 
