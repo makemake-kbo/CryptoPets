@@ -54,7 +54,26 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<h2 id=”instructor” class="text">Mint your Crypto</h2>
+					<h2 id=”instructor” class="text">Mint your Crypto Pet!</h2>
+
+					<form>
+						<div class="mb-3">
+							<label for="walletInputField" class="text form-label">Pet recipient address</label>
+							<input type="text" class="form-control" id="walletInputField" aria-describedby="walletInputHelp">
+							<div id="walletInputHelp" class="form-text">By default, this will be your own address.</div>
+						</div>
+						<div class="mb-3">
+							<label for="nameInputField" class="text form-label">Pet name</label>
+							<input type="text" class="form-control" id="nameInputField" aria-describedby="nameInputHelp">
+							<div id="nameInputHelp" class="form-text">This will be the name of your Crypto Pet.</div>
+						</div>
+						<div class="mb-3">
+							<label for="cidInputField" class="text form-label">IPFS CID</label>
+							<input type="text" class="form-control" id="cidInputField" aria-describedby="cidInputHelp">
+							<div id="cidInputHelp" class="form-text">This will be the CID of your pet image hosted on IPFS. Unfamiliar with IPFS? Use <a href="https://pinata.cloud/" style="color: #fff">Pinata</a> to upload your pet image to IPFS.</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Mint</button>
+					</form>
 
 				</div>
 				<div class="col border rounded col-xs-1" align="center">
@@ -86,7 +105,7 @@
 
 	<footer class="footer mt-auto py-3 bg-dark text">
 		<div class="container">
-			<span class="text-muted">Made by <a href="https://github.com/makemake-kbo/CryptoPets">Vukasin Gostovic</a> with ❤️. Licensed under 3BSD.</span>
+			<span class="text-muted">Made by <a href="https://github.com/makemake-kbo/CryptoPets" style="color: #fff;text-decoration: none;">Vukasin Gostovic</a> with ❤️. Licensed under 3BSD.</span>
 		</div>
 	</footer>
 </body>
