@@ -1,7 +1,8 @@
 const sendEthButton = document.querySelector('.sendEthButton');
 
 sendEthButton.addEventListener('click', () => {
-  if (document.getElementById('nameInputField') !== "") {
+  var petName = document.getElementById('nameInputField').value;
+  if (petName !== "") {
     ethereum
     .request({
       method: 'eth_sendTransaction',
@@ -9,7 +10,7 @@ sendEthButton.addEventListener('click', () => {
       {
         from: accounts[0],
         to: '0x1b7e35ee9fAF386A0ae40685c8a2EC3f51ddFb32',
-        data: contract.methods.mint(accounts[0], document.getElementById('cidInputField').value, document.getElementById('nameInputField')).encodeABI(),
+        data: contract.methods.mint(accounts[0], document.getElementById('cidInputField').value, petName).encodeABI(),
         gasPrice: '3B9ACA00'
       },
       ],
