@@ -16,9 +16,10 @@ After submitting, you can view the trading card of the pet.
 
 ## Mint new pets
 
-**interface coming SOON**
-The interim solution is to use https://oneclickdapp.com/pearl-polaris
+To mint new pets, go to the mint page, and input your pets name and IPFS CID.   
+Currently, you will need to provide your own IPFS CID if you want to include a picture with your pet. An update that will allow you to upload an image directly is coming **SOON**.   
+![Mint](./pictures/mint.png)
 
-## Hosting your own crypto pets frontend
+## Hosting your own Crypto Pets frontend
 
 Crypto pets is a static website. Clone the master branch and serve the `index.html` file.
