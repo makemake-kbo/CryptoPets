@@ -2,7 +2,6 @@ document.getElementById("petImg").style.visibility = 'hidden'; // visible
 
 
 ethereum.on('accountsChanged', function (accounts) {
-	document.getElementById('walletInputField').value = ethereum.selectedAddress;
 	document.getElementById('btn-disconnect').innerHTML = ethereum.selectedAddress;
 
 	if (ethereum.selectedAddress === null) {

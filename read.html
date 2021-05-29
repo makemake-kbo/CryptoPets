@@ -1,106 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Crypto Pets</title>
-	<link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crypto Pets</title>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
 
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body class="bg-dark">
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Crypto Pets</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="index.html" target="_self">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="write.html" target="_self">Mint</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="read.html" target="_self">View Token</a>
-					</li>
-				</ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Crypto Pets</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html" target="_self">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="write.html" target="_self">Mint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="read.html" target="_self">View Token</a>
+                    </li>
+                </ul>
 
-				<form class="d-flex">
+                <form class="d-flex">
 
-					<button type="button" class="btn btn-outline-success" id="btn-connect" onclick="ethEnabled()">
-						Connect wallet
-					</button>
-					<div id="connected" style="display: none">
+                    <button type="button" class="btn btn-outline-success" id="btn-connect" onclick="ethEnabled()">
+                        Connect wallet
+                    </button>
+                    <div id="connected" style="display: none">
 
-						<button type="button" class="btn btn-outline-danger" id="btn-disconnect">
-						</button>
-					</form>
-				</div>
-			</div>
-		</form>
+                        <button type="button" class="btn btn-outline-danger" id="btn-disconnect">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </form>
 
-	</nav>
-	<hr class="bg-light">
-	<div class=”container”>
+    </nav>
+    <hr class="bg-light">
+    <div class=”container”>
 
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<h2 id=”instructor” class="text">Insert wallet address or connect your wallet to get started</h2>
-					<form>
-						<div class="mb-3">
-							<label for="exampleInputPassword1" class="form-label text">Wallet address:</label>
-							<input type="text" placeholder="Insert wallet address here..." id="contractBalanceInput">
-						</div>
-						<div class="mb-3">
-							<label for="exampleInputPassword1" class="form-label text">Token ID:</label>
-							<input type="text" placeholder="Insert token ID here..." id="tokenIdInput">
-						</div>
-						<button type="button" onclick="initializeContract(); readButton()" class="btn btn-primary" id=”name-button”>Submit</button>
-					</form>
-					<p class="text" id="p1"></p>
-				</div>
-				<div class="col border rounded col-xs-1" align="center">
-					<h1 class="text" style="padding-top: 10px">Crypto Pets</h1>
-					<figure class="figure" id="petImgPlaceholder">
-						<svg class="bd-placeholder-img figure-img img-fluid rounded" width="400" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 400x300" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="18%" y="50%" fill="#dee2e6" dy=".3em">Input address and token ID to view info</text></svg>
-					</figure>
-					<img src="" height="300" class="rounded mx-auto d-block" alt="" id="petImg">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 id=”instructor” class="text">Insert wallet address or connect your wallet to get started</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text">Wallet address:</label>
+                            <input type="text" placeholder="Insert wallet address here..." id="contractBalanceInput">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label text">Token ID:</label>
+                            <input type="text" placeholder="Insert token ID here..." id="tokenIdInput">
+                        </div>
+                        <button type="button" onclick="initializeContract(); readButton()" class="btn btn-primary" id=”name-button”>Submit</button>
+                    </form>
+                    <p class="text" id="p1"></p>
+                </div>
+                <div class="col border rounded col-xs-1" align="center">
+                    <h1 class="text" style="padding-top: 10px">Crypto Pets</h1>
+                    <figure class="figure" id="petImgPlaceholder">
+                        <svg class="bd-placeholder-img figure-img img-fluid rounded" width="400" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 400x300" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="18%" y="50%" fill="#dee2e6" dy=".3em">Input address and token ID to view info</text></svg>
+                    </figure>
+                    <img src="" height="300" class="rounded mx-auto d-block" alt="" id="petImg">
 
-					<div id="cardInfo" style="display: none">
-						<h3 class="text">Name:</h3>
-						<h4 class="text" id="cardName">Placeholder</h4>
-						<h3 class="text" style="padding-top: 35px">ID:</h3>
-						<h4 class="text" style="padding-bottom: 25px" id="cardId">Placeholder</h4>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div id="cardInfo" style="display: none">
+                        <h3 class="text">Name:</h3>
+                        <h4 class="text" id="cardName">Placeholder</h4>
+                        <h3 class="text" style="padding-top: 35px">ID:</h3>
+                        <h4 class="text" style="padding-bottom: 25px" id="cardId">Placeholder</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-	
-	<script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
-	<script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
 
-	<script src="./script/contractInfo.js"></script>
-	<script src="./script/web3.js"></script>
-	<script src="./script/input.js"></script>
-	<script src="./script/readFunctions.js"></script>
+    <script src="./script/contractInfo.js"></script>
+    <script src="./script/web3.js"></script>
+    <script src="./script/input.js"></script>
+    <script src="./script/readFunctions.js"></script>
 
-	<footer class="footer mt-auto py-3 bg-dark text">
-		<div class="container">
-			<span class="text-muted">Made by <a href="https://github.com/makemake-kbo/CryptoPets" style="color: #fff;text-decoration: none;">Vukasin Gostovic</a> with ❤️. Licensed under 3BSD.</span>
-		</div>
-	</footer>
+    <footer class="footer mt-auto py-3 bg-dark text">
+        <div class="container">
+            <span class="text-muted">Made by <a href="https://github.com/makemake-kbo/CryptoPets" style="color: #fff;text-decoration: none;">Vukasin Gostovic</a> with ❤️. Licensed under 3BSD.</span>
+        </div>
+    </footer>
 </body>
 
 </html>
