@@ -1,7 +1,7 @@
 # Crypto Pets
 
 ### Mint your pets on the blockchain!
-![Read promotional](./pictures/read.png)
+![image](https://user-images.githubusercontent.com/55022497/120086790-53712d00-c0e2-11eb-9d69-b6dac32abfd5.png)
 
 Crypto Pets is an ERC-721 token that enables anyone to tokenize their pet pictures!   
 Crypto Pets is currently available on the xDai chain where minting costs less than $0.0002.   
