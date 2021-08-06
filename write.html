@@ -64,51 +64,64 @@
                             <div id="nameInputHelp" class="form-text">This will be the name of your Crypto Pet.</div>
                         </div>
                         <div class="mb-3">
-                            <label for="cidInputField" class="text form-label"><p><em>Optional</em></p>IPFS CID</label>
-                            <input type="text" class="form-control" id="cidInputField" aria-describedby="cidInputHelp">
-                            <div id="cidInputHelp" class="form-text">This will be the CID of your pet image hosted on IPFS. Unfamiliar with IPFS? Use <a href="https://pinata.cloud/" style="color: #fff">Pinata</a> to upload your pet image to IPFS.</div>
+                            <label class="form-label text" for="customFile">Upload</label>
+                            <input type="file" class="form-control" id="customFile">
                         </div>
-                        <button type="button" class="sendEthButton btn btn-primary">Mint</button>
-                    </form>
-                    <div class="text" style="display: none;" id="mintResult">
-                        <h2>Minted!</h2>
-                    </div>
-
+                        <div class="mb-3">
+                            <label class="text form-label"><p><em>Optional</em></p></label><br>
+                            <label class="form-label text" for="customFile">Donate some xDai to an animal shelter!</label><br>
+                            <div class="btn-group me-2 xDaiDonationBox" role="group" aria-label="xDai donation">
+                                <button type="button" class="btn btn-secondary">◈1</button>
+                                <button type="button" class="btn btn-secondary">◈5</button>
+                                <button type="button" class="btn btn-secondary">◈10</button>
+                                <button type="button" class="btn btn-secondary">◈50</button>
+                                <div class="input-group">
+                                  <span class="input-group-text" id="inputGroupPrepend3">Custom</span>
+                                  <input type="text" class="form-control customDonationBox" id="customDonationAmmount" aria-describedby="inputGroupPrepend3" required="">
+                              </div>
+                          </div>
+                      </div>
+                      <button type="button" class="sendEthButton btn btn-primary">Mint</button>
+                  </form>
+                  <div class="text" style="display: none;" id="mintResult">
+                    <h2>Minted!</h2>
                 </div>
-                <div class="col border rounded col-xs-1" align="center">
-                    <h1 class="text" style="padding-top: 10px">Crypto Pets</h1>
-                    <figure class="figure" id="petImgPlaceholder">
-                        <svg class="bd-placeholder-img figure-img img-fluid rounded" width="400" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 400x300" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="25%" y="50%" fill="#dee2e6" dy=".3em">Input valid CID to view image</text></svg>
-                    </figure>
-                    <img src="" class="rounded mx-auto d-block" alt="" id="petImg">
 
-                    <div id="cardInfo" >
-                        <h3 class="text">Name:</h3>
-                        <h4 class="text" id="cardName">¯\_(ツ)_/¯</h4>
-                        <h3 class="text" style="padding-top: 35px">ID:</h3>
-                        <h4 class="text" style="padding-bottom: 25px" id="cardId">¯\_(ツ)_/¯</h4>
-                    </div>
+            </div>
+            <div class="col border rounded col-xs-1" align="center">
+                <h1 class="text" style="padding-top: 10px">Crypto Pets</h1>
+                <figure class="figure" id="petImgPlaceholder">
+                    <svg class="bd-placeholder-img figure-img img-fluid rounded" width="400" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 400x300" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="25%" y="50%" fill="#dee2e6" dy=".3em">Input valid CID to view image</text></svg>
+                </figure>
+                <img src="" class="rounded mx-auto d-block" alt="" id="petImg">
+
+                <div id="cardInfo" >
+                    <h3 class="text">Name:</h3>
+                    <h4 class="text" id="cardName">¯\_(ツ)_/¯</h4>
+                    <h3 class="text" style="padding-top: 35px">ID:</h3>
+                    <h4 class="text" style="padding-bottom: 25px" id="cardId">¯\_(ツ)_/¯</h4>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+<script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
 
-    <script src="./script/contractInfo.js"></script>
-    <script src="./script/web3.js"></script>
-    <script src="./script/writeInput.js"></script>
-    <script src="./script/write.js"></script>
-    <script src="./script/readFunctions.js"></script>
+<script src="./script/contractInfo.js"></script>
+<script src="./script/web3.js"></script>
+<script src="./script/writeInput.js"></script>
+<script src="./script/write.js"></script>
+<script src="./script/readFunctions.js"></script>
 
-    <footer class="footer mt-auto py-3 bg-dark text">
-        <div class="container">
-            <span class="text-muted">Made by <a href="https://github.com/makemake-kbo/CryptoPets" style="color: #fff;text-decoration: none;">Vukasin Gostovic</a> with ❤️. Licensed under 3BSD.</span>
-        </div>
-    </footer>
+<footer class="footer mt-auto py-3 bg-dark text">
+    <div class="container">
+        <span class="text-muted">Made by <a href="https://github.com/makemake-kbo/CryptoPets" style="color: #fff;text-decoration: none;">Vukasin Gostovic</a> with ❤️. Licensed under 3BSD.</span>
+    </div>
+</footer>
 </body>
 
 </html>
